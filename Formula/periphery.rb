@@ -1,5 +1,5 @@
 class Periphery < Formula
-  desc "Identify unused code in Swift projects (maintained fork of peripheryapp/periphery)"
+  desc "Unused code detector for Swift (maintained fork of peripheryapp/periphery)"
   homepage "https://github.com/tiny-earth-moon/periphery"
   url "https://github.com/tiny-earth-moon/periphery/archive/refs/tags/3.8.3.tar.gz"
   sha256 "cf5b76b5beee7465b27c416f4551e0d481d66062ab4b2ad0686a687634ab084a"
@@ -10,6 +10,7 @@ class Periphery < Formula
   depends_on :macos
 
   conflicts_with "periphery", because: "both install a `periphery` binary"
+  conflicts_with "periphery-pro/tap/periphery-cli", because: "Periphery Pro also installs a `periphery` binary"
 
   def install
     system "swift", "build", "--disable-sandbox", "-c", "release", "--product", "periphery"
