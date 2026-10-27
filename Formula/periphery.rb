@@ -1,8 +1,8 @@
 class Periphery < Formula
   desc "Unused code detector for Swift (maintained fork of peripheryapp/periphery)"
   homepage "https://github.com/tiny-earth-moon/periphery"
-  url "https://github.com/tiny-earth-moon/periphery/archive/refs/tags/3.8.4.tar.gz"
-  sha256 "4df85b1c3c227dc85f58fab8141e719770a2495861cc0161cf0db337321c1b6f"
+  url "https://github.com/tiny-earth-moon/periphery/archive/refs/tags/3.8.5.tar.gz"
+  sha256 "87810c3a32c24d45953347dc3dbebe7c4907727be4cc7a2e5f941f2ac8fbced5"
   license "MIT"
   head "https://github.com/tiny-earth-moon/periphery.git", branch: "master"
 
@@ -18,6 +18,6 @@ class Periphery < Formula
   end
 
   test do
-    assert_match "3.8.4", shell_output("#{bin}/periphery version")
+    assert_match "3.8.5", shell_output("#{bin}/periphery version")
   end
 end
