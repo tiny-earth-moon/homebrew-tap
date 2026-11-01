@@ -18,6 +18,6 @@ class Periphery < Formula
   end
 
   test do
-    assert_match "3.12.0", shell_output("#{bin}/periphery version")
+    assert_match version.to_s, shell_output("#{bin}/periphery version")
   end
 end
