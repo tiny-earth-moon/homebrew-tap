@@ -1,8 +1,8 @@
 class Periphery < Formula
   desc "Unused code detector for Swift (maintained fork of peripheryapp/periphery)"
   homepage "https://github.com/tiny-earth-moon/periphery"
-  url "https://github.com/tiny-earth-moon/periphery/archive/refs/tags/3.12.11.tar.gz"
-  sha256 "5bb2cea4f1da34eb764461002e7d91a3963ff9e1bd53b170f3c43a5b48d55d22"
+  url "https://github.com/tiny-earth-moon/periphery/archive/refs/tags/3.12.12.tar.gz"
+  sha256 "731d1b72970ad608d7fb9f52d4f74ee8e1c042d3c495488f469d5814fbce5829"
   license "MIT"
   head "https://github.com/tiny-earth-moon/periphery.git", branch: "master"
 
