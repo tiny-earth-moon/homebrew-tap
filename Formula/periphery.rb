@@ -1,20 +1,43 @@
 class Periphery < Formula
   desc "Unused code detector for Swift (maintained fork of peripheryapp/periphery)"
   homepage "https://github.com/tiny-earth-moon/periphery"
-  url "https://github.com/tiny-earth-moon/periphery/archive/refs/tags/3.12.16.tar.gz"
-  sha256 "9efb6ddec6a0c57444ce7efe291fbfdb3db8bbcd5d5a21d82dd46a87ef5d6df9"
+  url "https://github.com/tiny-earth-moon/periphery/archive/refs/tags/3.13.0.tar.gz"
+  sha256 "c6cd92eca676e48b5da3a7266a65940f03c41cff668487000e6cfe8ab3a7525b"
   license "MIT"
   head "https://github.com/tiny-earth-moon/periphery.git", branch: "master"
 
-  depends_on xcode: ["26.0", :build]
+  bottle do
+    root_url "https://github.com/tiny-earth-moon/periphery/releases/download/3.13.0"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "1b41323966b1ea22a3ca9291612e59186f90126577d9ea9ecd6828912bf69c3f"
+  end
+
   depends_on :macos
+  depends_on xcode: "26.0"
 
   conflicts_with "periphery", because: "both install a `periphery` binary"
   conflicts_with "periphery-pro/tap/periphery-cli", because: "Periphery Pro also installs a `periphery` binary"
 
   def install
-    system "swift", "build", "--disable-sandbox", "-c", "release", "--product", "periphery"
+    args = %w[--disable-sandbox -c release --product periphery]
+    # periphery links @rpath/libIndexStore.dylib and swift-index-store only adds the building
+    # Xcode to the rpath, e.g. /Applications/Xcode_27.2.app on a CI runner. A bottle must find
+    # the library on the user's machine: the default Xcode location first, then the Command Line
+    # Tools, which homebrew-core's periphery formula also relies on.
+    if build.bottle?
+      args += %w[-Xlinker -rpath -Xlinker
+                 /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib
+                 -Xlinker -rpath -Xlinker /Library/Developer/CommandLineTools/usr/lib]
+    end
+    system "swift", "build", *args
     bin.install ".build/release/periphery"
+  end
+
+  def caveats
+    <<~EOS
+      The bottle loads libIndexStore.dylib from /Applications/Xcode.app, or else from the
+      Command Line Tools. If neither is installed there, build from source instead:
+        brew reinstall --build-from-source periphery
+    EOS
   end
 
   test do
