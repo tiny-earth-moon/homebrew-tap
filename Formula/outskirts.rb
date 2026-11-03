@@ -15,7 +15,7 @@ class Outskirts < Formula
   depends_on xcode: "26.0"
 
   conflicts_with "periphery", because: "both install a `periphery` binary"
-  conflicts_with "periphery-pro/tap/periphery-cli", because: "periphery-cli (Periphery Pro) also installs a `periphery` binary"
+  conflicts_with "periphery-pro/tap/periphery-cli", because: "both install a `periphery` binary"
 
   def install
     args = %w[--disable-sandbox -c release --product outskirts]
