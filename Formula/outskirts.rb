@@ -1,21 +1,21 @@
 class Outskirts < Formula
   desc "Finds unused code in Swift projects (community-maintained fork of Periphery)"
   homepage "https://github.com/tiny-earth-moon/outskirts"
-  url "https://github.com/tiny-earth-moon/outskirts/archive/refs/tags/3.16.0.tar.gz"
-  sha256 "5414e2c2f3293078cbf1c77ac1c392dd36b84697de4986372106e0d10fe8bd11"
+  url "https://github.com/tiny-earth-moon/outskirts/archive/refs/tags/3.16.1.tar.gz"
+  sha256 "35d901a4bd6a38de66f619e06d59d7e66b5e1d98e8914d64c58751c72bcc7840"
   license "MIT"
   head "https://github.com/tiny-earth-moon/outskirts.git", branch: "master"
 
   bottle do
-    root_url "https://github.com/tiny-earth-moon/outskirts/releases/download/3.16.0"
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "f268c72fd0097d20b6b067e64bac80668df19381d76e88c8076c3360988b3428"
+    root_url "https://github.com/tiny-earth-moon/outskirts/releases/download/3.16.1"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "8ea3a96283d7937b3af49cb19f5f8dc4c213c2aaf94ba6cd52970e4cc68bc3b5"
   end
 
   depends_on :macos
   depends_on xcode: "26.0"
 
   conflicts_with "periphery", because: "both install a `periphery` binary"
-  conflicts_with "periphery-pro/tap/periphery-cli", because: "Periphery Pro also installs a `periphery` binary"
+  conflicts_with "periphery-pro/tap/periphery-cli", because: "both install a `periphery` binary"
 
   def install
     args = %w[--disable-sandbox -c release --product outskirts]
