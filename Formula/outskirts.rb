@@ -1,14 +1,14 @@
 class Outskirts < Formula
   desc "Finds unused code in Swift projects (community-maintained fork of Periphery)"
   homepage "https://github.com/tiny-earth-moon/outskirts"
-  url "https://github.com/tiny-earth-moon/outskirts/archive/refs/tags/3.18.1.tar.gz"
-  sha256 "43fbce4b6f774cf2493ef80d66be0ff80b8968624c94f4011d1aa9c0bd8f4dab"
+  url "https://github.com/tiny-earth-moon/outskirts/archive/refs/tags/3.19.0.tar.gz"
+  sha256 "9e0baf175cac36eb10e53fb7c6a2d33ccb1b1fced416753357fe37991374df5b"
   license "MIT"
   head "https://github.com/tiny-earth-moon/outskirts.git", branch: "master"
 
   bottle do
-    root_url "https://github.com/tiny-earth-moon/outskirts/releases/download/3.18.1"
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "106a42def7ddf00e5ca8cfbf07f20893140c9580639c90005ea818b3884f39c6"
+    root_url "https://github.com/tiny-earth-moon/outskirts/releases/download/3.19.0"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "c5b5931e503ff1f6c3a57d8b0ab19f1acbbfa32145b0c936ccbc7bc63e7575aa"
   end
 
   depends_on :macos
