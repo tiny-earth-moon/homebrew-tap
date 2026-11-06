@@ -9,6 +9,7 @@ class Outskirts < Formula
   bottle do
     root_url "https://github.com/tiny-earth-moon/outskirts/releases/download/3.21.0"
     sha256 cellar: :any_skip_relocation, arm64_golden_gate: "1c8027b698ceb26e131e087abdaf4e9a6addcad4730e1de4503836f8b7d19ee5"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "e89c3b121a98f903d087d9edf93b01821e43965d5658e215526d79f076e6d28b"
     sha256 cellar: :any_skip_relocation, arm64_tahoe:       "97f10519bb2b60598da56cf5d04f7352b87db77dbd414f06b5f1e2e1e201c685"
   end
 
