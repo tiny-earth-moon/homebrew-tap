@@ -1,16 +1,16 @@
 class Outskirts < Formula
   desc "Finds unused code in Swift projects (community-maintained fork of Periphery)"
   homepage "https://github.com/tiny-earth-moon/outskirts"
-  url "https://github.com/tiny-earth-moon/outskirts/archive/refs/tags/3.25.0.tar.gz"
-  sha256 "980a3a05549826666e22c4b5ab6c66f5a0ebcd79e69b601fba203fbda0506e74"
+  url "https://github.com/tiny-earth-moon/outskirts/archive/refs/tags/3.26.0.tar.gz"
+  sha256 "dd34b921f73f7bf97c4f57f03d487c70bf834d7146f8f87d6e3f284d4d12b826"
   license "MIT"
   head "https://github.com/tiny-earth-moon/outskirts.git", branch: "master"
 
   bottle do
-    root_url "https://github.com/tiny-earth-moon/outskirts/releases/download/3.25.0"
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "00bb15c1761ae8d794fef7d38c9282e300dd297c56142994b7e346fe931f9f20"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "d9cd250d7e13c59fafacf063a5b1a90fe3a232695e9cc5a36c163d81d030940a"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "41f68711efccc07db361652945e27c76a287443ef8a13a34eca12bd0f113eaed"
+    root_url "https://github.com/tiny-earth-moon/outskirts/releases/download/3.26.0"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "71ac008a84663ddad13637adbb4e044ab19d06db29bba4e3c15179ff1ac1e69b"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "379e2a891fff24790e0885e56831520db5f3ed344f6129d65d819ed620f8b74a"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "86d61bf6619e8bad211e68e1c8c1300edcb13685b07ca7826538bbf253fce40d"
   end
 
   depends_on :macos
